@@ -1,0 +1,75 @@
+package com.example.agendiario;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+
+@Entity(tableName = "comics")
+
+class Comic {
+
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(title = "comicId")
+    private int comicId;
+
+    @Nullable
+    @ColumnInfo(title = "comicTitle")
+    private String comicTitle;
+
+    private String comicPublishingCompany;
+
+    public Donation(@Nullable String title, String publishingCompany, int score, String creationDate) {
+        comicTitle = title;
+        comicPublishingCompany = publishingCompany;
+        comicScore = score;
+        comicCreationDate = creationDate;
+    }
+
+    public int getId() {
+        return comicId;
+    }
+
+    public void setId(int id) {
+        comicId = id;
+    }
+
+    public String getTitle() {
+        return comicTitle;
+    }
+
+    public void setTitle(String title) {
+        comicTitle = title;
+    }
+
+    public String getPublishingCompany() {
+        return comicPublishingCompany;
+    }
+
+    public void setPublishingCompany(String publishingCompany) {
+        comicPublishingCompany = publishingCompany;
+    }
+
+    public int getScore() {
+        return comicScore;
+    }
+
+    public void setScore(int score) {
+        comicScore = score;
+    }
+
+    public String getCreationDate() {
+        return comicCreationDate;
+    }
+
+    public void setCreationDate(String creationDate) {
+        comicCreationDate = creationDate;
+    }
+
+    private int comicScore;
+    private String comicCreationDate;
+
+}
