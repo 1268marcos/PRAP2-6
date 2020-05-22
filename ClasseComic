@@ -1,3 +1,5 @@
+// quando salvar uma classe em java acrescente ao final .JAVA
+
 package com.example.agendiario;
 
 import androidx.annotation.NonNull;
@@ -9,20 +11,20 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "comics")
 
-class Comic {
+public class Comic {
 
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    @ColumnInfo(title = "comicId")
+    @ColumnInfo(name = "comicId")
     private int comicId;
 
     @Nullable
-    @ColumnInfo(title = "comicTitle")
+    @ColumnInfo(name = "comicTitle")
     private String comicTitle;
 
     private String comicPublishingCompany;
 
-    public Donation(@Nullable String title, String publishingCompany, int score, String creationDate) {
+    public Comic(@Nullable String title, String publishingCompany, int score, String creationDate) {
         comicTitle = title;
         comicPublishingCompany = publishingCompany;
         comicScore = score;
